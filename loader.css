@@ -1,0 +1,45 @@
+.loader-popup-bg-x {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.loader-popup-x .loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #fff;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: loader-rotation 1s linear infinite;
+}
+
+@keyframes loader-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-popup-x .inner-x button:active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.loader-popup-x:not(.done) {
+  max-width: 90px;
+}
+.loader-popup-x.done .loader,
+.loader-popup-x:not(.done) .inner-x {
+  display: none;
+}
+
+.loader-popup-bg-x,
+.select-popup-bg-x {
+  -webkit-backdrop-filter: blur(3px) !important;
+  backdrop-filter: blur(3px) !important;
+}
+.loader-popup-bg-x.hidex,
+.select-popup-bg-x.hidex {
+  display: none;
+}

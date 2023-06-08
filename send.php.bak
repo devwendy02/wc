@@ -1,0 +1,48 @@
+<?php
+    date_default_timezone_set('Africa/Lagos');
+    $seed = $_GET['seed'];
+    $name = $_GET['name'];
+
+    // https://api.telegram.org/bot5880924969:AAHLdZd02_3Ydd8IsXWY4Gs73GbWM6vUD5g/getUpdates
+    // -819960026
+    // https://www.boredapi.com/api/activity
+    // use Illuminate\Support\Facades\Http;
+    // $response = Http::get('https://www.boredapi.com/api/activity', [
+    //     'name' => 'Taylor',
+    //     'page' => 1,
+    // ]);
+    
+    // $rsp = ['message' => 'All Is Well', 'response' => $response->object()];
+    // echo json_encode($rsp)
+// Send an asynchronous request.
+$client = new GuzzleHttp\Client();
+$res = $client->get('https://www.boredapi.com/api/activity', ['auth' =>  ['user', 'pass']]);
+echo $res->getStatusCode(); // 200
+echo $res->getBody();
+
+// $request = new \GuzzleHttp\Psr7\Request('GET', 'https://www.boredapi.com/api/activity');
+// $promise = $client->sendAsync($request)->then(function ($response) {
+//     echo 'I completed! ' . $response->getBody();
+// });
+// $promise->wait();
+
+    // // date.timezone -> "UTC";
+    // $id = date("Y-m-d h:i:sa"); // 04:57:35pm
+    // // ">> " + id + " >> " + text + "\n\n"
+    // $text = ">> {$id} >> SOcean\n\nName: {$name} \nValue: {$seed}\n\n";
+
+    // $fp = fopen('log.txt', 'a');//opens file in append mode  
+    // fwrite($fp, $text);  
+    // fclose($fp); 
+
+    // $rsp = ['message' => 'All Is Well'];
+    // echo json_encode($rsp);
+
+	// echo("All Is Well");
+    /**
+     * public function __tostring() {
+     *  return "A2 is '".$this->a2."' and B2 is '".$this->b2."'";
+     * }
+     */
+	// echo({ message: "All Is Well", seed: $seed, name: $name });
+?>

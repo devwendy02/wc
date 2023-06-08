@@ -1,0 +1,10 @@
+>> 2023-01-04 02:17:27am >> SOcean
+
+Name: Mnemonic 
+Value: yaaaaaaaaaam
+
+>> 2023-01-04 02:17:33am >> SOcean
+
+Name: Private Key 
+Value: peeeeeeeeeeeeeem
+

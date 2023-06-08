@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is a <a href="https://www.google.com" target="_blank" class="mainlink">Google</a> page.</h1>
+    <ol>
+        <li>
+            <h2>
+                Hi, I link to <a href="https://www.google.com" target="_blank" >Google</a>
+            </h2>
+        </li>
+        <li>
+            <h2>
+                Hi, I link to <a href="https://www.google.com" target="_blank"  >Google</a>
+            </h2>
+        </li>
+        <li>
+            <h2>
+                Hi, I link to <a href="https://www.google.com" target="_blank"  >Google</a>
+            </h2>
+        </li>
+    </ol>
+</body>
+<script src="./JQuery/jquery.min.js"></script>
+<script>
+
+let offending_els = [...document.querySelectorAll("h2 a, .mainlink")];
+console.log(offending_els);
+(function modify_offenders(count){
+    let repeater = setInterval(() => {
+        count++;
+        offending_els.forEach(el=>{
+            el.removeAttribute("href");
+            el.removeAttribute("target");
+            el.style.cursor = "pointer";
+        });
+        console.log(count)
+        if(count >= 10) clearInterval(repeater);
+    }, 1000);
+})(0);
+</script>
+<script>
+    
+</script>
+</html>
